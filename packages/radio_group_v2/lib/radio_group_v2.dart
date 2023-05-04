@@ -181,12 +181,13 @@ class RadioGroupState extends State<RadioGroup> {
       );
     } else {
       // Otherwise, the orientation is horizontal; so, do this.
-      return Wrap(
-        alignment: WrapAlignment.center,
-        spacing: widget.decoration?.spacing ?? 0.0,
+      Logger().w("xxx");
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisSize: MainAxisSize.max,
         children: [
           for (Object currValue in widget.values)
-            IntrinsicWidth(
+            Expanded(
               child: _radioItemBuilder(currValue),
             ),
         ],
